@@ -6,9 +6,12 @@ main () {
 }
 
 class AppQuestion extends StatelessWidget {
-
+  // a statless widget can't have mutable variables like var
+  var selectedQuestion = 0;
   void answer() {
-    print('question answered');
+    // even if the value is updated widgets that depend on the value wont because this is a steteless widget
+    selectedQuestion++;
+    print('question answered $selectedQuestion');
   }
 
   void Function() functionThetReturnsAnotherFunction() {
@@ -49,7 +52,24 @@ class AppQuestion extends StatelessWidget {
               // you can also create the function you want directly on the parameter
               onPressed: () => print('answered creating the function directly on the parameter'),
             ),
-            Text('Hello Flutter'),
+            Column(
+              children:[
+                Text('----------------------------------------------------------------------------------------------------------'),
+                Text(questions[selectedQuestion]),
+                RaisedButton(
+                  child: Text('Answer 1'),
+                  onPressed: answer,
+                ),
+                RaisedButton(
+                  child: Text('Answer 2'),
+                  onPressed: answer,
+                ),
+                RaisedButton(
+                  child: Text('Answer 3'),
+                  onPressed: answer,
+                ),
+              ],
+            )
           ],
         ),
       ),
