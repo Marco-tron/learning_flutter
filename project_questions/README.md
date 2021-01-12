@@ -2,11 +2,9 @@
 
 A new Flutter project.
 
-## Getting Started
+## Stateless.dart
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
+uses a stateless widget, and depicts all basic widget construction while in a stateless widget
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
