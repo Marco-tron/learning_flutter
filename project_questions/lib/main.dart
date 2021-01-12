@@ -5,16 +5,17 @@ main () {
   runApp(new AppQuestion());
 }
 //class that manages the state
-class AppQuestionState extends State<AppQuestion> {
-  var selectedQuestion = 0;
+// _ also makes the class private to this file
+class _AppQuestionState extends State<AppQuestion> {
+  var _selectedQuestion = 0;
 
-  void answer() {
+  void _answer() {
     // setState is needed to update ui state
     setState(() {
-      selectedQuestion++;
+      _selectedQuestion++;
     });
     
-    print('question answered $selectedQuestion');
+    print('question answered $_selectedQuestion');
   }
 
   @override
@@ -32,18 +33,18 @@ class AppQuestionState extends State<AppQuestion> {
         // the column is a invisible widget used to organize others, you can use it togheter with rows to space exactly how you want yous widgets to be placed
         body: Column(
           children: [
-            Text(questions[selectedQuestion]),
+            Text(questions[_selectedQuestion]),
                 RaisedButton(
                   child: Text('Answer 1'),
-                  onPressed: answer,
+                  onPressed: _answer,
                 ),
                 RaisedButton(
                   child: Text('Answer 2'),
-                  onPressed: answer,
+                  onPressed: _answer,
                 ),
                 RaisedButton(
                   child: Text('Answer 3'),
-                  onPressed: answer,
+                  onPressed: _answer,
                 ),
           ],
         ),
@@ -55,6 +56,6 @@ class AppQuestionState extends State<AppQuestion> {
 //class where the component itself is created
 class AppQuestion extends StatefulWidget {
   State<AppQuestion> createState() {
-    return AppQuestionState();
+    return _AppQuestionState();
   }
 }
