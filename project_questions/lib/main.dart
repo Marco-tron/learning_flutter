@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './question.dart';
 
 main () {
   // runApp receives a root widget that is going to contain all other widgets that make the aplication
@@ -33,19 +34,19 @@ class _AppQuestionState extends State<AppQuestion> {
         // the column is a invisible widget used to organize others, you can use it togheter with rows to space exactly how you want yous widgets to be placed
         body: Column(
           children: [
-            Text(questions[_selectedQuestion]),
-                RaisedButton(
-                  child: Text('Answer 1'),
-                  onPressed: _answer,
-                ),
-                RaisedButton(
-                  child: Text('Answer 2'),
-                  onPressed: _answer,
-                ),
-                RaisedButton(
-                  child: Text('Answer 3'),
-                  onPressed: _answer,
-                ),
+            Question(questions[_selectedQuestion]),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: _answer,
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: _answer,
+            ),
+            RaisedButton(
+              child: Text('Answer 3'),
+              onPressed: _answer,
+            ),
           ],
         ),
       ),
