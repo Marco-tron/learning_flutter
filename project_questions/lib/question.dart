@@ -9,6 +9,19 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text);
+    // a widget that lets you set margin padding background, etc... like a css class
+    return Container(
+      // double.infinity sets the maximum double value
+      width: double.infinity,
+      // there is also EdgeInsets.LTRB that lets you set different margins for each direction
+      margin: EdgeInsets.all(10),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 28
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 }
