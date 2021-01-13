@@ -22,9 +22,16 @@ class _AppQuestionState extends State<AppQuestion> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> questions = [
-      'what\'s your name?',
-      'what\'s your favourite color'
+    // a Map is a key, value duo
+    final List<Map<String, Object>> questions = [
+      {
+        'text':'what\'s your name?',
+        'answers': ['Marco','Jake','Angela', 'Fernanda']
+      },
+      {
+        'text':'what\'s your favourite color',
+        'answers': ['amarelo','azul','marrom','verde']
+      }
     ];
     return MaterialApp(
       //scaffold is used to create your app structure
@@ -35,7 +42,7 @@ class _AppQuestionState extends State<AppQuestion> {
         // the column is a invisible widget used to organize others, you can use it togheter with rows to space exactly how you want yous widgets to be placed
         body: Column(
           children: [
-            Question(questions[_selectedQuestion]),
+            Question(questions[_selectedQuestion]['text']),
             Answer('Answer 1', _answer),
             Answer('Answer 2', _answer),
             Answer('Answer 3', _answer),
