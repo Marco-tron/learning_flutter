@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 main () {
   // runApp receives a root widget that is going to contain all other widgets that make the aplication
@@ -35,18 +36,9 @@ class _AppQuestionState extends State<AppQuestion> {
         body: Column(
           children: [
             Question(questions[_selectedQuestion]),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: _answer,
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: _answer,
-            ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: _answer,
-            ),
+            Answer('Answer 1', _answer),
+            Answer('Answer 2', _answer),
+            Answer('Answer 3', _answer),
           ],
         ),
       ),
