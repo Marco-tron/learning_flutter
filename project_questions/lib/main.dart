@@ -33,9 +33,10 @@ class _AppQuestionState extends State<AppQuestion> {
         'answers': ['amarelo','azul','marrom','verde']
       }
     ];
-    List<Widget> answers = [];
-    for(var textAnswers in questions[_selectedQuestion]['answers']) {
-      answers.add(Answer(textAnswers, _answer));
+    List<String> answers = questions[_selectedQuestion]['answers'];
+    List<Widget> answersWidgets = [];
+    for(var textAnswers in answers) {
+      answersWidgets.add(Answer(textAnswers, _answer));
     }
     return MaterialApp(
       //scaffold is used to create your app structure
@@ -48,7 +49,7 @@ class _AppQuestionState extends State<AppQuestion> {
           children: [
             Question(questions[_selectedQuestion]['text']),
             // spread operator
-            ...answers
+            ...answersWidgets
           ],
         ),
       ),
